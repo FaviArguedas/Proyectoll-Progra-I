@@ -50,15 +50,14 @@ bool ListaProfesores::eliminarEspecifico(int id) {
 }
 
 
-bool ListaProfesores::listaVacia() {
+/*bool ListaProfesores::listaVacia() {
     return primero == nullptr;
-}
+}*/
 
-Profesor* ListaProfesores::buscarEspecifico(string nombre)
-{
+Profesor* ListaProfesores::buscarEspecifico(int id_){
     actual = primero;
     while (actual != nullptr) {
-        if (actual->getProfesor()->getNombre() == nombre) {
+        if (actual->getProfesor()->getId() == id_) {
             return actual->getProfesor();
         }
         actual = actual->getSiguiente();

@@ -15,7 +15,7 @@ private:
     Profesor* profesor;
 
 public:
-    Grupo(int numeroGrupo, int capacidadAlumnos, string horario, Curso* curso);
+    Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso, Profesor* profe);
     int getNumeroGrupo();
     void setNumeroGrupo(int numeroGrupo);
     int getCapacidadAlumnos();

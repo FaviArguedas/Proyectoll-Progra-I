@@ -1,11 +1,18 @@
 #pragma once
 #include <iostream>
 #include <sstream>
+#include <string>
+#include "Universidad.h"
+#include "Profesor.h"
+#include <unistd.h>
 using namespace std;
 
 class Menu {
+private:
+    Universidad* universidad;
+
 public:
-    Menu();
+    Menu(string);
     //--- Menu Principal ---
     void mostrarMenu();
 
@@ -31,9 +38,10 @@ public:
     void mostrarProfesores();
     void mostrarEstudiantes();
     void mostrarCursosxEstudiante();
-    void mostrarProfeEspecifico();
+    void informeProfeEspecifico();
     void mostrarPeriodos();
-    void grupoEspecifico();
+    void mostrarGrupoEspecifico();
+
 
 
 

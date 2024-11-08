@@ -1,6 +1,6 @@
 #include "Grupo.h"
 
-Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, string horario, Curso* curso) {
+Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso, Profesor* profe) {
     this->numeroGrupo = numeroGrupo;
     this->capacidadAlumnos = capacidadAlumnos;
     this->cantidadAlumnos = 0;

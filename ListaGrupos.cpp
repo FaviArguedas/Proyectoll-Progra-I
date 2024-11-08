@@ -57,7 +57,7 @@ string ListaGrupos::toString() {
     return s.str();
 }
 
-Grupo* ListaGrupos::obtenerGrupoPorNumero(int numeroGrupo) {
+Grupo* ListaGrupos::informeGrupoEspecifico(int numeroGrupo) {
     actual = primero;
     while (actual != nullptr) {
         if (actual->getGrupo()->getNumeroGrupo() == numeroGrupo) {

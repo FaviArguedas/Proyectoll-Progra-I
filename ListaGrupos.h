@@ -13,7 +13,7 @@ public:
     bool eliminarEspecifico(int numeroGrupo);
     bool listaVacia();
     string toString();
-    Grupo* obtenerGrupoPorNumero(int numeroGrupo);
+    Grupo* informeGrupoEspecifico(int numeroGrupo);
     ~ListaGrupos();
 };
 
