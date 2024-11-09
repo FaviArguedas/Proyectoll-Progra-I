@@ -12,10 +12,9 @@ private:
     int cantidadAlumnos;
     string horario;
     Curso* curso;
-    Profesor* profesor;
 
 public:
-    Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso, Profesor* profe);
+    Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso);
     int getNumeroGrupo();
     void setNumeroGrupo(int numeroGrupo);
     int getCapacidadAlumnos();
@@ -26,7 +25,5 @@ public:
     void setHorario(string horario);
     Curso* getCurso();
     void setCurso(Curso* curso);
-    Profesor* getProfesor();
     string toString();
-    void setProfesor(Profesor*);
 };

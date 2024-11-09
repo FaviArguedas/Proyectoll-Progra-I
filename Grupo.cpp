@@ -1,12 +1,11 @@
 #include "Grupo.h"
 
-Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso, Profesor* profe) {
+Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso) {
     this->numeroGrupo = numeroGrupo;
     this->capacidadAlumnos = capacidadAlumnos;
     this->cantidadAlumnos = 0;
     this->horario = horario;
     this->curso = curso;
-    this->profesor = nullptr;
 }
 
 Curso* Grupo::getCurso() {
@@ -17,10 +16,6 @@ void Grupo::setCurso(Curso* curso) {
     this->curso = curso;
 }
 
-Profesor* Grupo::getProfesor()
-{
-    return this->profesor;
-}
 
 int Grupo::getNumeroGrupo() {
     return numeroGrupo;
@@ -61,9 +56,4 @@ string Grupo::toString() {
     s << "Cantidad de Alumnos: " << cantidadAlumnos << endl;
     s << "Horario: " << horario << endl;
     return s.str();
-}
-
-void Grupo::setProfesor(Profesor* _profesor)
-{
-    this->profesor = _profesor;
 }

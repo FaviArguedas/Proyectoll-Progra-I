@@ -326,7 +326,7 @@ void Menu::ingresarGrupo() {
             cout << "El curso no existe" << endl;
             return;
         }
-        Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, horario_, curso, new Profesor());
+        Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, horario_, curso);
 
         universidad->ingresarGrupo(grupo);
 

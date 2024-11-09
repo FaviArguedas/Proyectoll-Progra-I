@@ -53,10 +53,6 @@ string  Universidad::mostrarProfeEspecifico(int id_) {
 }
 
 void Universidad::asignarProfesor(int idProfesor, int numGrupo) {
-    Profesor* profesor = listaProfesores->buscarEspecifico(idProfesor);
-
-    listaGrupos->asignarProfesor(profesor, numGrupo);
-
 }
 
 void Universidad::ingresarCurso(Curso *curso) {
