@@ -11,6 +11,7 @@ public:
     ListaPeriodos();
     void insertarAlFinal(Periodo* periodo);
     bool eliminarEspecifico(string nombre_);
+    Periodo* buscarPeriodo(string nombre_);
     bool listaVacia();
     string toString();
     Periodo* informePeriodoEspecifico(string nombre_);

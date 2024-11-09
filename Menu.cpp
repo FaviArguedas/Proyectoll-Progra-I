@@ -237,6 +237,11 @@ void Menu::ingresarBloque() {
 
 //--- Ingresar Curso ---
 void Menu::ingresarCurso() {
+    if(universidad->getListaPeriodos()->listaVacia()){
+        cout << "No hay periodos registrados" << endl;
+        return;
+    }
+
     string nombre_ ="" ;
     int id_ = 0;
     int horas_ = 0;
@@ -266,26 +271,72 @@ void Menu::ingresarCurso() {
         }
 
     }while(estadoNum != 1 && estadoNum != 2);
-    Curso* curso = new Curso(nombre_, id_, horas_, precio_, estado_);
+
+    cout << "Lista de periodos registrados: " << endl;
+    cout << universidad->mostrarPeriodos() << endl;
+
+    cout << "Elija el nombre del periodo al que pertenece el curso: ";
+    string nombrePeriodo;
+    cin >> nombrePeriodo;
+    Periodo* periodo;
+
+    if(universidad->getListaPeriodos()->buscarPeriodo(nombrePeriodo)) {
+        periodo = universidad->getListaPeriodos()->buscarPeriodo(nombrePeriodo);
+    }else {
+        cout << "El periodo no existe" << endl;
+        return;
+    }
+
+    Curso* curso = new Curso(nombre_, id_, horas_, precio_, estado_, periodo);
     universidad->ingresarCurso(curso);
+
+    cout << "Curso ingresado con exito" << endl;
 }
 
 //--- Ingresar Grupo ---
 void Menu::ingresarGrupo() {
-    int numeroGrupo =0 ;
-    int capacidadAlumnos = 0;
-    int cantidadAlumnos = 0;
-    string horario_ = "";
-    Curso* curso_;
+    if(universidad->getListaCursos()->listaVacia()){
+        cout << "No hay cursos registrados" << endl;
+        return;
+    }
+    int opcion;
 
-    cout << "Ingrese el numero de grupo"; cin >> numeroGrupo;
-    cout << "Ingrese la capacidad de Alumnos del cruso: "; cin >> capacidadAlumnos;
-    cout << "Ingrese la cantidad de alumnos del curso: "; cin >> cantidadAlumnos;
-    cout << "Ingrese el horario del curso: "; cin >> horario_;
+    do {
+        int numeroGrupo =0 ;
+        int capacidadAlumnos = 0;
+        int cantidadAlumnos = 0;
+        string horario_ = "";
 
-    Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, horario_, new Curso(), new Profesor());
+        cout << "Ingrese el numero de grupo"; cin >> numeroGrupo;
+        cout << "Ingrese la capacidad de Alumnos del cruso: "; cin >> capacidadAlumnos;
+        cout << "Ingrese la cantidad de alumnos del curso: "; cin >> cantidadAlumnos;
+        cout << "Ingrese el horario del curso: "; cin >> horario_;
 
-    universidad->ingresarGrupo(grupo);
+        cout << "Lista de cursos registrados: " << endl;
+        cout << universidad->mostrarCursos() << endl;
+
+        cout << "Elija el ID del curso al que pertenece el grupo: ";
+        int idCurso;
+        cin >> idCurso;
+        Curso* curso;
+
+        if(universidad->getListaCursos()->buscarCurso(idCurso)) {
+            curso = universidad->getListaCursos()->buscarCurso(idCurso);
+        }else{
+            cout << "El curso no existe" << endl;
+            return;
+        }
+        Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, horario_, curso, new Profesor());
+
+        universidad->ingresarGrupo(grupo);
+
+        cout << "Grupo ingresado con exito" << endl;
+
+        cout << "Desea ingresar otro grupo? (1-Si/2-No): ";
+
+        cin >> opcion;
+
+    }while (opcion == 1);
 }
 
 //--- Asignar Profesor ---

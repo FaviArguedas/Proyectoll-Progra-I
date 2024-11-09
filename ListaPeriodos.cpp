@@ -43,6 +43,17 @@ bool ListaPeriodos::eliminarEspecifico(string nombre_) {
     return true;
 }
 
+Periodo * ListaPeriodos::buscarPeriodo(string nombre_) {
+    actual = primero;
+    while (actual != nullptr) {
+        if (actual->getPeriodo()->getNombre() == nombre_) {
+            return actual->getPeriodo();
+        }
+        actual = actual->getSiguiente();
+    }
+    return nullptr;
+}
+
 bool ListaPeriodos::listaVacia() {
     return primero == nullptr;
 }

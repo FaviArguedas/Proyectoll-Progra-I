@@ -11,6 +11,7 @@ public:
     ListaCursos();
     void insertarAlFinal(Curso*);
     bool eliminarEspecifico(string);
+    Curso* buscarCurso(int);
     bool listaVacia();
     string toString();
     ~ListaCursos();

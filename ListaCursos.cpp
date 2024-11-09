@@ -60,6 +60,17 @@ bool ListaCursos::eliminarEspecifico(string nombre) {
     }
 }
 
+Curso * ListaCursos::buscarCurso(int  id) {
+    actual = primero;
+    while (actual != nullptr) {
+        if (actual->getCurso()->getId() == id) {
+            return actual->getCurso();
+        }
+        actual = actual->getSiguiente();
+    }
+    return nullptr;
+}
+
 ListaCursos::~ListaCursos() {
     while (primero != NULL) {
         actual = primero;

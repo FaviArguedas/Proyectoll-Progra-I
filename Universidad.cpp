@@ -27,6 +27,12 @@ string Universidad::mostrarGrupos() {
     return s.str();
 }
 
+string Universidad::mostrarCursos() {
+    stringstream s;
+    s << listaCursos->toString();
+    return s.str();
+}
+
 string Universidad::mostrarPeriodos() {
     stringstream s;
     s << listaPeriodos->toString();
@@ -105,4 +111,8 @@ ListaCursos * Universidad::getListaCursos() {
 
 ListaGrupos * Universidad::getListaGrupos() {
     return this->listaGrupos;
+}
+
+ListaPeriodos * Universidad::getListaPeriodos() {
+    return this->listaPeriodos;
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "Periodo.h"
 using namespace std;
 #include <string>
 #include <sstream>
@@ -11,10 +12,10 @@ private:
     int horas;
     float precio;
     bool estado;
-
+    Periodo* periodo;
 public:
     Curso();
-    Curso(string nombre, int id, int horas, float precio, bool estado);
+    Curso(string nombre, int id, int horas, float precio, bool estado, Periodo* periodo);
     string getNombre();
     void setNombre(string nombre);
     int getId();

@@ -21,6 +21,7 @@ public:
     void ingresarProfesor(Profesor* profesor);
     string mostrarProfesores();
     string mostrarGrupos();
+    string mostrarCursos();
     string mostrarProfeEspecifico(int id_);
     string mostrarPeriodos();
     void asignarProfesor(int idProfesor, int numGrupo);
@@ -33,5 +34,5 @@ public:
     ListaProfesores* getListaProfesores();
     ListaCursos* getListaCursos();
     ListaGrupos* getListaGrupos();
+    ListaPeriodos* getListaPeriodos();
 };
-

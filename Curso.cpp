@@ -7,14 +7,16 @@ Curso::Curso() {
     this->horas = 0;
     this->precio = 0.0;
     this->estado = false;
+    this->periodo = nullptr;
 }
 
-Curso::Curso(string _nombre, int _id, int _horas, float _precio, bool _estado) {
+Curso::Curso(string _nombre, int _id, int _horas, float _precio, bool _estado, Periodo* _periodo) {
     this->nombre = _nombre;
     this->id = _id;
     this->horas = _horas;
     this->precio = _precio;
     this->estado = _estado;
+    this->periodo = _periodo;
 }
 
 string Curso::getNombre() {
