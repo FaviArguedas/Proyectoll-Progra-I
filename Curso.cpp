@@ -68,3 +68,11 @@ string Curso::toString() {
     s << "Estado: " << (this->estado ? "Activo" : "Inactivo") << "\n";
     return s.str();
 }
+
+string Curso::toStringPeriodo() {
+    stringstream s;
+    s << "Periodo: " << this->periodo->getNombre() << "\n";
+    s << "Nombre de curso: " << this->nombre << "\n";
+
+    return s.str();
+}

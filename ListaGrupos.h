@@ -13,6 +13,7 @@ public:
     bool eliminarEspecifico(int numeroGrupo);
     bool listaVacia();
     void asignarProfesor(Profesor* profesor, int numGrupo);
+    string mostrarGruposPorProfesor(Profesor* profesor);
     string toString();
     Grupo* informeGrupoEspecifico(int numeroGrupo);
     ~ListaGrupos();

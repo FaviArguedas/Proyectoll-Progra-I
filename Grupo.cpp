@@ -56,10 +56,12 @@ void Grupo::setHorario(string _horario) {
 
 string Grupo::toString() {
     stringstream s;
+    s << curso->toStringPeriodo() << endl;
     s << "N�mero de Grupo: " << numeroGrupo << endl;
     s << "Capacidad de Alumnos: " << capacidadAlumnos << endl;
     s << "Cantidad de Alumnos: " << cantidadAlumnos << endl;
     s << "Horario: " << horario << endl;
+
     return s.str();
 }
 

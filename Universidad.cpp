@@ -39,15 +39,19 @@ string Universidad::mostrarPeriodos() {
     return s.str();
 }
 
-string  Universidad::mostrarProfeEspecifico(int id_) {
+string Universidad::mostrarProfeEspecifico(int id_) {
     stringstream s;
 
     Profesor* prof = listaProfesores->buscarEspecifico(id_);
-    if(prof==NULL){
+    if(prof==nullptr){
         s << "Profesor inexistente" << endl;
     }else{
         s << "Informacion del Profesor: " << endl;
         s << listaProfesores->toString() << endl;
+
+
+        s << "Se muestra toda la informacion de este profesor: " << endl;
+        s << listaGrupos->mostrarGruposPorProfesor(prof);
     }
     return s.str();
 }

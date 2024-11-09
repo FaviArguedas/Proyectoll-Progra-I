@@ -27,4 +27,5 @@ public:
     bool getEstado();
     void setEstado(bool estado);
     string toString();
+    string toStringPeriodo();
 };

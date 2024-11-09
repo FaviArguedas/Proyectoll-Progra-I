@@ -87,3 +87,16 @@ ListaGrupos::~ListaGrupos() {
         delete actual;
     }
 }
+
+string ListaGrupos::mostrarGruposPorProfesor(Profesor* profesor) {
+    stringstream s;
+    actual = primero;
+    while (actual != nullptr) {
+        if (actual->getGrupo()->getProfesor() == profesor) {
+            s << actual->toStringNodo();
+            s << "---------------------" << endl;
+        }
+        actual = actual->getSiguiente();
+    }
+    return s.str();
+}

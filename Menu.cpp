@@ -407,9 +407,17 @@ void Menu::mostrarCursosxEstudiante() {
 
 //--- Informe  Profesor Especifico ---
 void Menu::informeProfeEspecifico() {
-    // Pedir datos de id al usuario
+    if(universidad->getListaProfesores()->listaVacia()){
+        cout << "No hay profesores registrados" << endl;
+        return;
+    }
+
+    cout << "Lista de profesores registrados: " << endl;
+    cout << universidad->mostrarProfesores() << endl;
+
     int id_ = 0;
-    cout << "Digite el ID del profesor que desea buscar: "; cin >> id_;
+    cout << "Digite el ID del profesor que desea buscar: ";
+    cin >> id_;
     cout << universidad->mostrarProfeEspecifico(id_);
 }
 
