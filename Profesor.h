@@ -10,11 +10,10 @@ private:
     string telefono;
     string email;
     string gradoAcademico;
-    Curso* curso;
 
 public:
     Profesor();
-    Profesor(string nombre, int id, string telefono, string email, string gradoAcademico, Curso*);
+    Profesor(string nombre, int id, string telefono, string email, string gradoAcademico);
     string getNombre();
     void setNombre(string nombre);
     int getId();
@@ -25,7 +24,5 @@ public:
     void setEmail(string email);
     string getGradoAcademico();
     void setGradoAcademico(string gradoAcademico);
-    Curso* getCurso();
-    void setCurso(Curso*);
     string toString();
 };

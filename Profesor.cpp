@@ -7,26 +7,15 @@ Profesor::Profesor() {
     this->telefono = "";
     this->email = "";
     this->gradoAcademico = "";
-    this->curso = nullptr;
 }
 
-Profesor::Profesor(string nombre, int id, string telefono, string email, string gradoAcademico, Curso* curso) {
+Profesor::Profesor(string nombre, int id, string telefono, string email, string gradoAcademico) {
     this->nombre = nombre;
     this->id = id;
     this->telefono = telefono;
     this->email = email;
     this->gradoAcademico = gradoAcademico;
-    this->curso = curso;
 }
-
-void Profesor::setCurso(Curso* curso) {
-    this->curso = curso;
-}
-
-Curso* Profesor::getCurso() {
-    return this->curso;
-}
-
 
 string Profesor::getNombre() {
     return nombre;

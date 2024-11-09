@@ -209,7 +209,7 @@ void Menu::ingresarProfesor() {
     cout << "Ingrese el grado academico del profesor: "; cin >> gradoAcademico_;
     cout << endl;
 
-    Profesor* profe = new Profesor(nombre_, id_, telefono_, correo_, gradoAcademico_, new Curso());
+    Profesor* profe = new Profesor(nombre_, id_, telefono_, correo_, gradoAcademico_);
 
     universidad->ingresarProfesor(profe);
 }
