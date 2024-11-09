@@ -27,7 +27,7 @@ void Menu::mostrarMenu() {
                 subMenuBusquedas();
                 break;
             case 4:
-                subMenuGuardarDatos();
+                guardarDatos();
                 break;
             case 5:
                 cout << "Saliendo..." << endl;
@@ -186,10 +186,7 @@ void Menu::subMenuBusquedas() {
     }
 }
 
-//**********  SubMenu Guardar Los Datos En Archivos **************
-void Menu::subMenuGuardarDatos() {
 
-}
 
 //-------- Metodos SubMenu Administracion ---------
 
@@ -334,6 +331,11 @@ void Menu::mostrarGrupoEspecifico() {
     int numGrupo = 0;
     cout << "Digite el numero de grupo que desea buscar: "; cin >> numGrupo;
     cout << universidad->mostrarGrupoEspecifico(numGrupo);
+}
+
+void Menu::guardarDatos() {
+    universidad->guardarDatos();
+    cout << "Datos guardados con exito" << endl;
 }
 
 

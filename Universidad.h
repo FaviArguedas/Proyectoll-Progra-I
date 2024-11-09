@@ -26,5 +26,6 @@ public:
     void ingresarCurso(Curso* curso);
     void ingresarGrupo(Grupo* grupo);
     string mostrarGrupoEspecifico(int numGrupo);
+    void guardarDatos();
 };
 

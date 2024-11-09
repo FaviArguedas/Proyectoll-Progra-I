@@ -1,5 +1,7 @@
 #include "Universidad.h"
 
+#include <fstream>
+
 
 Universidad::Universidad(string nombre_) {
     nombreU=nombre_;
@@ -54,4 +56,21 @@ string Universidad::mostrarGrupoEspecifico(int numGrupo) {
         s << listaGrupos->toString();
     }
     return s.str();
+}
+
+void Universidad::guardarDatos() {
+    ofstream archivo;
+    archivo.open("../datos.txt", ios::out);
+    if(archivo.fail()){
+        cout << "No se pudo abrir el archivo" << endl;
+        exit(1);
+    }
+    archivo << "Universidad: " << nombreU << endl;
+    archivo << "Profesores: " << endl;
+    archivo << listaProfesores->toString() << endl;
+    archivo << "Cursos: " << endl;
+    archivo << listaCursos->toString() << endl;
+    archivo << "Grupos: " << endl;
+    archivo << listaGrupos->toString() << endl;
+    archivo.close();
 }

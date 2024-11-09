@@ -42,6 +42,8 @@ public:
     void mostrarPeriodos();
     void mostrarGrupoEspecifico();
 
+    void guardarDatos();
+
     //~Menu();
     ~Menu();
 };
