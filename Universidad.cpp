@@ -8,10 +8,7 @@ Universidad::Universidad(string nombre_) {
     this->listaProfesores = new ListaProfesores();
     this->listaCursos = new ListaCursos();
     this->listaGrupos = new ListaGrupos();
-    this->periodo1= new Periodo("Periodo1", "Enero", "Marzo");
-    this->periodo2= new Periodo("Periodo2", "Abril", "Junio");
-    this->periodo3= new Periodo("Periodo3", "Julio", "Septiembre");
-    this->periodo4= new Periodo("Periodo4", "Octubre", "Diciembre");
+    this->listaPeriodos= new ListaPeriodos();
 }
 
 void Universidad::ingresarProfesor(Profesor* profesor) {
@@ -27,6 +24,12 @@ string Universidad::mostrarProfesores() {
 string Universidad::mostrarGrupos() {
     stringstream s;
     s << listaGrupos->toString();
+    return s.str();
+}
+
+string Universidad::mostrarPeriodos() {
+    stringstream s;
+    s << listaPeriodos->toString();
     return s.str();
 }
 
@@ -56,6 +59,10 @@ void Universidad::ingresarCurso(Curso *curso) {
 
 void Universidad::ingresarGrupo(Grupo *grupo) {
     listaGrupos->insertarAlFinal(grupo);
+}
+
+void Universidad::ingresarPeriodo(Periodo *periodo) {
+    listaPeriodos->insertarAlFinal(periodo);
 }
 
 string Universidad::mostrarGrupoEspecifico(int numGrupo) {

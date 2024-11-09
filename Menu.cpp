@@ -221,7 +221,18 @@ void Menu::ingresarEstudiante() {
 
 //--- Ingresar Bloque o Periodo ---
 void Menu::ingresarBloque() {
+    string nombre_ = "";
+    string mesInicio_ = "";
+    string mesFin_ = "";
 
+    cout << "Ingrese el nombre del periodo (Periodo1/Periodo2/Periodo3/Periodo4): "; cin >> nombre_;
+    cout << endl;
+    cout << "Ingrese el mes de inicio del periodo: "; cin >> mesInicio_;
+    cout << endl;
+    cout << "Ingese el mes de finalización del periodo: "; cin >> mesFin_;
+
+    Periodo* periodo = new Periodo(nombre_, mesInicio_, mesFin_);
+    universidad->ingresarPeriodo(periodo);
 }
 
 //--- Ingresar Curso ---
@@ -353,7 +364,7 @@ void Menu::informeProfeEspecifico() {
 
 //--- Informe  Periodos Habilitados para el Año ---
 void Menu::mostrarPeriodos() {
-
+    cout << universidad->mostrarPeriodos();
 }
 
 //--- Informe Grupo Especifico ---

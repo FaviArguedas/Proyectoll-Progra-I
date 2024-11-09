@@ -2,6 +2,7 @@
 #include "ListaProfesores.h"
 #include "ListaCursos.h"
 #include "ListaGrupos.h"
+#include "ListaPeriodos.h"
 #include "Profesor.h"
 #include "Curso.h"
 #include "Grupo.h"
@@ -13,10 +14,7 @@ private:
     ListaProfesores* listaProfesores;
     ListaCursos* listaCursos;
     ListaGrupos* listaGrupos;
-    Periodo* periodo1;
-    Periodo* periodo2;
-    Periodo* periodo3;
-    Periodo* periodo4;
+    ListaPeriodos* listaPeriodos;
 
 public:
     Universidad(string nombre);
@@ -24,9 +22,11 @@ public:
     string mostrarProfesores();
     string mostrarGrupos();
     string mostrarProfeEspecifico(int id_);
+    string mostrarPeriodos();
     void asignarProfesor(int idProfesor, int numGrupo);
     void ingresarCurso(Curso* curso);
     void ingresarGrupo(Grupo* grupo);
+    void ingresarPeriodo(Periodo* periodo);
     string mostrarGrupoEspecifico(int numGrupo);
     void guardarDatos();
 
