@@ -28,4 +28,6 @@ add_executable(Proyectoll_Progra_CLion main.cpp
         Periodo.h
         Periodo.cpp
         NodoPeriodos.h
-        NodoPeriodos.cpp)
+        NodoPeriodos.cpp
+        ListaPeriodos.h
+        ListaPeriodos.cpp)

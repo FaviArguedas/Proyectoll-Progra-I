@@ -1,0 +1,21 @@
+Universidad: UNA
+Profesores: 
+Nombre: Josue
+ID: 123
+N?mero Telef?nico: 156
+Email: gmial
+Grado Acad?mico: asd
+
+Cursos: 
+Nombre: Algreba
+ID: 123
+Horas: 45
+Precio: 200000
+Estado: Activo
+
+Grupos: 
+N�mero de Grupo: 2
+Capacidad de Alumnos: 30
+Cantidad de Alumnos: 0
+Horario: 12pm1pm
+
