@@ -12,7 +12,7 @@ public:
     ListaProfesores();
     void insertarAlFinal(Profesor* profesor);
     bool eliminarEspecifico(int id);
-    //bool listaVacia();
+    bool listaVacia();
     Profesor* buscarEspecifico(int id);
     string toString();
     ~ListaProfesores();

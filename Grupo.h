@@ -28,5 +28,5 @@ public:
     void setCurso(Curso* curso);
     Profesor* getProfesor();
     string toString();
-    void asignarProfesor(Profesor*);
+    void setProfesor(Profesor*);
 };

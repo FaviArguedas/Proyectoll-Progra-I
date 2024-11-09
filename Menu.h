@@ -37,6 +37,7 @@ public:
     //Metodos Busquedas e informes
     void mostrarProfesores();
     void mostrarEstudiantes();
+    void mostrarGrupos();
     void mostrarCursosxEstudiante();
     void informeProfeEspecifico();
     void mostrarPeriodos();

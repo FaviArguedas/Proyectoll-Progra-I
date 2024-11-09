@@ -47,6 +47,18 @@ bool ListaGrupos::listaVacia() {
     return primero == nullptr;
 }
 
+void ListaGrupos::asignarProfesor(Profesor *profesor, int numGrupo) {
+
+    actual = primero;
+    while (actual != nullptr) {
+        if (actual->getGrupo()->getNumeroGrupo() == numGrupo) {
+            actual->getGrupo()->setProfesor(profesor);
+            break;
+        }
+        actual = actual->getSiguiente();
+    }
+}
+
 string ListaGrupos::toString() {
     stringstream s;
     actual = primero;

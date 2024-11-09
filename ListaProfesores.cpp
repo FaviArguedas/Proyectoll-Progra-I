@@ -49,6 +49,15 @@ bool ListaProfesores::eliminarEspecifico(int id) {
     }
 }
 
+bool ListaProfesores::listaVacia() {
+
+        if (primero == NULL){
+            return true;
+        }
+        return false;
+
+}
+
 
 /*bool ListaProfesores::listaVacia() {
     return primero == nullptr;

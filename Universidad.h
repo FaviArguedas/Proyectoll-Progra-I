@@ -22,10 +22,16 @@ public:
     Universidad(string nombre);
     void ingresarProfesor(Profesor* profesor);
     string mostrarProfesores();
+    string mostrarGrupos();
     string mostrarProfeEspecifico(int id_);
+    void asignarProfesor(int idProfesor, int numGrupo);
     void ingresarCurso(Curso* curso);
     void ingresarGrupo(Grupo* grupo);
     string mostrarGrupoEspecifico(int numGrupo);
     void guardarDatos();
+
+    ListaProfesores* getListaProfesores();
+    ListaCursos* getListaCursos();
+    ListaGrupos* getListaGrupos();
 };
 

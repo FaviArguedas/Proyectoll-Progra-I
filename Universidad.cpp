@@ -24,6 +24,12 @@ string Universidad::mostrarProfesores() {
     return s.str();
 }
 
+string Universidad::mostrarGrupos() {
+    stringstream s;
+    s << listaGrupos->toString();
+    return s.str();
+}
+
 string  Universidad::mostrarProfeEspecifico(int id_) {
     stringstream s;
 
@@ -35,6 +41,13 @@ string  Universidad::mostrarProfeEspecifico(int id_) {
         s << listaProfesores->toString() << endl;
     }
     return s.str();
+}
+
+void Universidad::asignarProfesor(int idProfesor, int numGrupo) {
+    Profesor* profesor = listaProfesores->buscarEspecifico(idProfesor);
+
+    listaGrupos->asignarProfesor(profesor, numGrupo);
+
 }
 
 void Universidad::ingresarCurso(Curso *curso) {
@@ -73,4 +86,16 @@ void Universidad::guardarDatos() {
     archivo << "Grupos: " << endl;
     archivo << listaGrupos->toString() << endl;
     archivo.close();
+}
+
+ListaProfesores * Universidad::getListaProfesores() {
+    return this->listaProfesores;
+}
+
+ListaCursos * Universidad::getListaCursos() {
+    return this->listaCursos;
+}
+
+ListaGrupos * Universidad::getListaGrupos() {
+    return this->listaGrupos;
 }

@@ -72,8 +72,8 @@ string Profesor::toString() {
     stringstream s;
     s << "Nombre: " << nombre << endl;
     s << "ID: " << id << endl;
-    s << "N?mero Telef?nico: " << telefono << endl;
-    s << "Email: " << email << endl;
-    s << "Grado Acad?mico: " << gradoAcademico << endl;
+    // s << "N?mero Telef?nico: " << telefono << endl;
+    // s << "Email: " << email << endl;
+    // s << "Grado Acad?mico: " << gradoAcademico << endl;
     return s.str();
 }

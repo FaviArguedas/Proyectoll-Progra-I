@@ -279,7 +279,33 @@ void Menu::ingresarGrupo() {
 
 //--- Asignar Profesor ---
 void Menu::asignarProfesor() {
+    if(universidad->getListaProfesores()->listaVacia()){
+        cout << "No hay profesores registrados" << endl;
+        return;
+    }
+    if(universidad->getListaGrupos()->listaVacia()){
+        cout << "No hay grupos registrados" << endl;
+        return;
+    }
 
+    // Muestra los profesores registrados
+    cout << "Lista de profesores registrados: " << endl;
+    cout << universidad->mostrarProfesores() << endl;
+
+    cout << "Elija el ID del profesor que desea asignar: ";
+    int idProfesor;
+    cin >> idProfesor;
+
+    cout << "Lista de grupos registrados: " << endl;
+    cout << universidad->mostrarGrupos() << endl;
+
+    cout << "Elija el numero de grupo al que desea asignar al profesor: ";
+    int numGrupo;
+    cin >> numGrupo;
+
+    universidad->asignarProfesor(idProfesor, numGrupo);
+
+    cout << "Profesor asignado con exito" << endl;
 }
 
 ////////////////////////////////////////////
@@ -306,6 +332,10 @@ void Menu::mostrarProfesores(){
 //--- Informe  Estudiantes Registrados ---
 void Menu::mostrarEstudiantes() {
 
+}
+
+void Menu::mostrarGrupos() {
+    cout << universidad->mostrarGrupos() << endl;
 }
 
 //--- Informe Cursos Matriculados por un Estudiante ---

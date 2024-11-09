@@ -63,7 +63,7 @@ string Grupo::toString() {
     return s.str();
 }
 
-void Grupo::asignarProfesor(Profesor* _profesor)
+void Grupo::setProfesor(Profesor* _profesor)
 {
     this->profesor = _profesor;
 }
