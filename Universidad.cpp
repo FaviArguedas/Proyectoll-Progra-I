@@ -36,6 +36,10 @@ string Universidad::mostrarCursos() {
 string Universidad::mostrarPeriodos() {
     stringstream s;
     s << listaPeriodos->toString();
+
+    // Recorre la lista de grupos y muestra los grupos de cada periodo
+    s << listaGrupos->mostrarGruposPorPeriodo();
+
     return s.str();
 }
 

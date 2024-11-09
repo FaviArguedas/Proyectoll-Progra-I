@@ -43,6 +43,16 @@ bool ListaGrupos::eliminarEspecifico(int numeroGrupo) {
     return true;
 }
 
+Grupo * ListaGrupos::buscarGrupo(int numeroGrupo) {
+    actual = primero;
+    while (actual != nullptr) {
+        if (actual->getGrupo()->getNumeroGrupo() == numeroGrupo) {
+            return actual->getGrupo();
+        }
+        actual = actual->getSiguiente();
+    }
+}
+
 bool ListaGrupos::listaVacia() {
     return primero == nullptr;
 }
@@ -96,6 +106,17 @@ string ListaGrupos::mostrarGruposPorProfesor(Profesor* profesor) {
             s << actual->toStringNodo();
             s << "---------------------" << endl;
         }
+        actual = actual->getSiguiente();
+    }
+    return s.str();
+}
+
+string ListaGrupos::mostrarGruposPorPeriodo() {
+    stringstream s;
+    actual = primero;
+    while (actual != nullptr) {
+        s << actual->toStringNodo();
+        s << "---------------------" << endl;
         actual = actual->getSiguiente();
     }
     return s.str();

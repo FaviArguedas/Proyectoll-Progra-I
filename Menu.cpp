@@ -428,9 +428,37 @@ void Menu::mostrarPeriodos() {
 
 //--- Informe Grupo Especifico ---
 void Menu::mostrarGrupoEspecifico() {
-    int numGrupo = 0;
-    cout << "Digite el numero de grupo que desea buscar: "; cin >> numGrupo;
-    cout << universidad->mostrarGrupoEspecifico(numGrupo);
+    cout << "Lista de cursos registrados: " << endl;
+    cout << universidad->mostrarCursos() << endl;
+
+    cout << "Elija el ID del curso al que pertenece el grupo: ";
+    int idCurso;
+    cin >> idCurso;
+    Curso* curso;
+
+    if(universidad->getListaCursos()->buscarCurso(idCurso)) {
+        curso = universidad->getListaCursos()->buscarCurso(idCurso);
+    }else{
+        cout << "El curso no existe" << endl;
+        return;
+    }
+
+    cout << "Lista de grupos registrados: " << endl;
+    cout << universidad->mostrarGrupos() << endl;
+
+    cout << "Elija el numero de grupo que desea buscar: ";
+    int numGrupo;
+    cin >> numGrupo;
+
+    Grupo* grupo;
+    if(universidad->getListaGrupos()->buscarGrupo(numGrupo)) {
+        grupo = universidad->getListaGrupos()->buscarGrupo(numGrupo);
+    }else {
+        cout << "El grupo no existe" << endl;
+        return;
+    }
+
+    cout << grupo->toString() << endl;
 }
 
 void Menu::guardarDatos() {
