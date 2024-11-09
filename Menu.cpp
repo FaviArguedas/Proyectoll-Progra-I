@@ -98,6 +98,36 @@ void Menu::subMenuAdmin() {
     }
 }
 
+//**********  SubMenu Matricula  **************
+void Menu::subMenuMatricula() {
+    int x=4;
+    while(x != 3){
+        cout << "*** Submenu Matricula ***" << endl;
+        cout << "1- Matricular Estudiante" << endl;
+        cout << "2- Desmatricular Estudiante" << endl;
+        cout << "3- Salir" << endl;
+        cout << "Ingrese una opcion: "; cin >> x;
+        switch(x){
+            case 1:{
+                matricularEstudiante();
+                break;
+            }
+            case 2:{
+                desmatricularEstudiante();
+                break;
+            }
+            case 3:{
+                mostrarMenu();
+                cout << "Voolviendo al menu principal" << endl;
+                break;
+            }
+            default:
+                cout << "Presione enter para continuar..." << endl;
+        }
+    }
+
+}
+
 //**********  SubMenu Busquedas  **************
 void Menu::subMenuBusquedas() {
     int x=8;
@@ -156,8 +186,13 @@ void Menu::subMenuBusquedas() {
     }
 }
 
+//**********  SubMenu Guardar Los Datos En Archivos **************
+void Menu::subMenuGuardarDatos() {
+
+}
 
 //-------- Metodos SubMenu Administracion ---------
+
 //--- Ingresar Profesor ---
 void Menu::ingresarProfesor() {
     string nombre_ = "";
@@ -252,6 +287,19 @@ void Menu::asignarProfesor() {
 
 ////////////////////////////////////////////
 
+//-------- Metodos SubMenu Matricula ---------
+//--- Matricular Estudiante ---
+void Menu::matricularEstudiante() {
+
+}
+
+//--- Desmatricular Estudiante ---
+void Menu::desmatricularEstudiante() {
+
+}
+
+///////////////////////////////////////////
+
 //-------- Metodos SubMenu Busquedas e Informes ---------
 //--- Informe  Profesores Registrados ---
 void Menu::mostrarProfesores(){
@@ -288,20 +336,6 @@ void Menu::mostrarGrupoEspecifico() {
     cout << universidad->mostrarGrupoEspecifico(numGrupo);
 }
 
-
-
-
-
-
-
-////////////////////////////////////////////
-void Menu::subMenuMatricula() {
-
-}
-
-void Menu::subMenuGuardarDatos() {
-
-}
 
 
 

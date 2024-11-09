@@ -5,6 +5,7 @@
 #include "Profesor.h"
 #include "Curso.h"
 #include "Grupo.h"
+#include "Periodo.h"
 
 class Universidad {
 private:
@@ -12,6 +13,10 @@ private:
     ListaProfesores* listaProfesores;
     ListaCursos* listaCursos;
     ListaGrupos* listaGrupos;
+    Periodo* periodo1;
+    Periodo* periodo2;
+    Periodo* periodo3;
+    Periodo* periodo4;
 
 public:
     Universidad(string nombre);

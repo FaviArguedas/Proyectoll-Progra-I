@@ -42,9 +42,6 @@ public:
     void mostrarPeriodos();
     void mostrarGrupoEspecifico();
 
-
-
-
     //~Menu();
     ~Menu();
 };

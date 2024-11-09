@@ -6,6 +6,10 @@ Universidad::Universidad(string nombre_) {
     this->listaProfesores = new ListaProfesores();
     this->listaCursos = new ListaCursos();
     this->listaGrupos = new ListaGrupos();
+    this->periodo1= new Periodo("Periodo1", "Enero", "Marzo");
+    this->periodo2= new Periodo("Periodo2", "Abril", "Junio");
+    this->periodo3= new Periodo("Periodo3", "Julio", "Septiembre");
+    this->periodo4= new Periodo("Periodo4", "Octubre", "Diciembre");
 }
 
 void Universidad::ingresarProfesor(Profesor* profesor) {

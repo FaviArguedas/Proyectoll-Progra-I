@@ -24,4 +24,8 @@ add_executable(Proyectoll_Progra_CLion main.cpp
         Menu.h
         Menu.cpp
         Universidad.cpp
-        Universidad.h)
+        Universidad.h
+        Periodo.h
+        Periodo.cpp
+        NodoPeriodos.h
+        NodoPeriodos.cpp)
