@@ -30,4 +30,12 @@ add_executable(Proyectoll_Progra_CLion main.cpp
         NodoPeriodos.h
         NodoPeriodos.cpp
         ListaPeriodos.h
-        ListaPeriodos.cpp)
+        ListaPeriodos.cpp
+        estudiante.cpp
+        estudiante.h
+        horario.cpp
+        horario.h
+        nodoEstu.cpp
+        nodoEstu.h
+        listaEstu.cpp
+        listaEstu.h)
