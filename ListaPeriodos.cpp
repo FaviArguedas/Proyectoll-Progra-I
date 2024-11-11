@@ -19,11 +19,11 @@ void ListaPeriodos::insertarAlFinal(Periodo* periodo) {
     }
 }
 
-bool ListaPeriodos::eliminarEspecifico(string nombre_) {
+bool ListaPeriodos::eliminarEspecifico(int nombre_) {
     NodoPeriodos* anterior = nullptr;
     actual = primero;
 
-    while (actual != nullptr && actual->getPeriodo()->getNombre() != nombre_) {
+    while (actual != nullptr && actual->getPeriodo()->getNumero() != nombre_) {
         anterior = actual;
         actual = actual->getSiguiente();
     }
@@ -43,10 +43,10 @@ bool ListaPeriodos::eliminarEspecifico(string nombre_) {
     return true;
 }
 
-Periodo * ListaPeriodos::buscarPeriodo(string nombre_) {
+Periodo * ListaPeriodos::buscarPeriodo(int nombre_) {
     actual = primero;
     while (actual != nullptr) {
-        if (actual->getPeriodo()->getNombre() == nombre_) {
+        if (actual->getPeriodo()->getNumero() == nombre_) {
             return actual->getPeriodo();
         }
         actual = actual->getSiguiente();
@@ -68,10 +68,10 @@ string ListaPeriodos::toString() {
     return s.str();
 }
 
-Periodo* ListaPeriodos::informePeriodoEspecifico(string nombre_) {
+Periodo* ListaPeriodos::informePeriodoEspecifico(int nombre_) {
     actual = primero;
     while (actual != nullptr) {
-        if (actual->getPeriodo()->getNombre() == nombre_) {
+        if (actual->getPeriodo()->getNumero() == nombre_) {
             return actual->getPeriodo();
         }
         actual = actual->getSiguiente();

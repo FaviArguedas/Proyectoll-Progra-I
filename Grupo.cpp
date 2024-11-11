@@ -1,12 +1,19 @@
 #include "Grupo.h"
 
-Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string horario, Curso* curso, Profesor* profe) {
+Grupo::Grupo(int numeroGrupo, int capacidadAlumnos, int cantidadAlumnos, string dia, string horaInicio, string horaFin, string horario, Curso* curso, Profesor* profe) {
     this->numeroGrupo = numeroGrupo;
     this->capacidadAlumnos = capacidadAlumnos;
     this->cantidadAlumnos = 0;
     this->horario = horario;
     this->curso = curso;
     this->profesor = nullptr;
+    this->dia=dia;
+    this->horaInicio=horaInicio;
+    this->horaFinal=horaFin;
+    vEstudiantes = new estudiante* [capacidadAlumnos];
+    for (int i = 0; i < capacidadAlumnos; i++){
+        vEstudiantes[i] = NULL;
+    }
 }
 
 Curso* Grupo::getCurso() {
@@ -46,6 +53,8 @@ void Grupo::setCantidadAlumnos(int _cantidadAlumnos) {
     cantidadAlumnos = _cantidadAlumnos;
 }
 
+
+
 string Grupo::getHorario() {
     return horario;
 }
@@ -68,4 +77,51 @@ string Grupo::toString() {
 void Grupo::setProfesor(Profesor* _profesor)
 {
     this->profesor = _profesor;
+}
+
+ string Grupo::getDia()  {
+    return dia;
+}
+
+void Grupo::setDia(string dia) {
+    Grupo::dia = dia;
+}
+
+ string Grupo::getHoraInicio()  {
+    return horaInicio;
+}
+
+void Grupo::setHoraInicio( string horaInicio) {
+    Grupo::horaInicio = horaInicio;
+}
+
+ string Grupo::getHoraFinal()  {
+    return horaFinal;
+}
+
+void Grupo::setHoraFinal(const string horaFinal) {
+    Grupo::horaFinal = horaFinal;
+}
+
+
+bool Grupo::buscarEstudiante(string id){
+    if(cantidadAlumnos > 0){
+        for (int i=0; i < cantidadAlumnos; i++){
+            if(id == vEstudiantes[i]->getID()){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+bool Grupo::insertarEstudiante(estudiante *e) {
+    string id = e->getID();
+
+    if(cantidadAlumnos < capacidadAlumnos && !buscarEstudiante(id)){
+        vEstudiantes[cantidadAlumnos] = e;
+        cantidadAlumnos++;
+        return true;
+    }
+    return false;
 }

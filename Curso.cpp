@@ -71,7 +71,7 @@ string Curso::toString() {
 
 string Curso::toStringPeriodo() {
     stringstream s;
-    s << "Periodo: " << this->periodo->getNombre() << "\n";
+    s << "Periodo: " << this->periodo->getNumero() << "\n";
     s << "Nombre de curso: " << this->nombre << "\n";
 
     return s.str();

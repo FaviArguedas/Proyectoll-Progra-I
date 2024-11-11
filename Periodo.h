@@ -5,15 +5,15 @@ using namespace std;
 
 class Periodo{
 private:
-    string nombre;
+    int numero;
     string mesInicio;
     string mesFin;
 
 public:
     Periodo();
-    Periodo(string nombre, string mesInicio, string mesFin);
-    string getNombre();
-    void setNombre(string nombre);
+    Periodo(int numero, string mesInicio, string mesFin);
+    int getNumero();
+    void setNumero(int numero);
     string getMesInicio();
     void setMesInicio(string mesInicio_);
     string getMesFin();

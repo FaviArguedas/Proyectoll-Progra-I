@@ -10,11 +10,11 @@ private:
 public:
     ListaPeriodos();
     void insertarAlFinal(Periodo* periodo);
-    bool eliminarEspecifico(string nombre_);
-    Periodo* buscarPeriodo(string nombre_);
+    bool eliminarEspecifico(int nombre_);
+    Periodo* buscarPeriodo(int nombre_);
     bool listaVacia();
     string toString();
-    Periodo* informePeriodoEspecifico(string nombre_);
+    Periodo* informePeriodoEspecifico(int nombre_);
     ~ListaPeriodos();
 
 };

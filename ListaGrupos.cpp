@@ -51,6 +51,7 @@ Grupo * ListaGrupos::buscarGrupo(int numeroGrupo) {
         }
         actual = actual->getSiguiente();
     }
+    return nullptr;
 }
 
 bool ListaGrupos::listaVacia() {

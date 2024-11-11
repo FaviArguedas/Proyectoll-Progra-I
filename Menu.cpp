@@ -216,22 +216,50 @@ void Menu::ingresarProfesor() {
 
 //--- Ingresar Estudiante ---
 void Menu::ingresarEstudiante() {
+    string nom;
+    string id;
+    string especialidad;
+    string email;
+    int numTel;
+    int edad;
+
+    cout << "Ingrese el nombre del estudiante: ";
+    cin >> nom;
+    cout << "Ingrese el ID del estudiante: ";
+    cin>>id;
+    cout << "Ingrese la especialidad del estudiante: ";
+    cin >> especialidad;
+    cout << "Ingrese el email del estudiante: ";
+    cin>>email;
+    cout << "Ingrese el numero telefonico del estudiante: ";
+    cin>>numTel;
+    cout << "Ingrese la edad del estudiante: ";
+    cin>>edad;
+
+    estudiante* e = new estudiante(nom, id, especialidad, email, numTel, edad);
+
+    if(universidad->ingresarEst(e)){
+        cout << "Estudiante Ingresado!!" << endl;
+    }
+    else{
+        cout << "No es posible inresar el estudiante." << endl;
+    }
 
 }
 
 //--- Ingresar Bloque o Periodo ---
 void Menu::ingresarBloque() {
-    string nombre_ = "";
+    int numero = 0;
     string mesInicio_ = "";
     string mesFin_ = "";
 
-    cout << "Ingrese el nombre del periodo (Periodo1/Periodo2/Periodo3/Periodo4): "; cin >> nombre_;
+    cout << "Ingrese el numero del periodo (Periodo1/Periodo2/Periodo3/Periodo4): "; cin >> numero;
     cout << endl;
     cout << "Ingrese el mes de inicio del periodo: "; cin >> mesInicio_;
     cout << endl;
     cout << "Ingese el mes de finalización del periodo: "; cin >> mesFin_;
 
-    Periodo* periodo = new Periodo(nombre_, mesInicio_, mesFin_);
+    Periodo* periodo = new Periodo(numero, mesInicio_, mesFin_);
     universidad->ingresarPeriodo(periodo);
 }
 
@@ -276,7 +304,7 @@ void Menu::ingresarCurso() {
     cout << universidad->mostrarPeriodos() << endl;
 
     cout << "Elija el nombre del periodo al que pertenece el curso: ";
-    string nombrePeriodo;
+    int nombrePeriodo;
     cin >> nombrePeriodo;
     Periodo* periodo;
 
@@ -305,12 +333,18 @@ void Menu::ingresarGrupo() {
         int numeroGrupo =0 ;
         int capacidadAlumnos = 0;
         int cantidadAlumnos = 0;
+        string horaInicio_="";
+        string horaFin_="";
+        string dia_="";
         string horario_ = "";
 
         cout << "Ingrese el numero de grupo"; cin >> numeroGrupo;
         cout << "Ingrese la capacidad de Alumnos del cruso: "; cin >> capacidadAlumnos;
         cout << "Ingrese la cantidad de alumnos del curso: "; cin >> cantidadAlumnos;
         cout << "Ingrese el horario del curso: "; cin >> horario_;
+        cout << "Ingrese el dia: "; cin >> dia_;
+        cout << "Ingrese la hora de inicio del curso: "; cin >> horaInicio_;
+        cout << "Ingrese la hora de fin del curso: "; cin >> horaFin_;
 
         cout << "Lista de cursos registrados: " << endl;
         cout << universidad->mostrarCursos() << endl;
@@ -326,7 +360,7 @@ void Menu::ingresarGrupo() {
             cout << "El curso no existe" << endl;
             return;
         }
-        Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, horario_, curso, new Profesor());
+        Grupo* grupo = new Grupo(numeroGrupo, capacidadAlumnos, cantidadAlumnos, dia_, horaInicio_, horaFin_, horario_, curso, new Profesor());
 
         universidad->ingresarGrupo(grupo);
 
@@ -375,7 +409,24 @@ void Menu::asignarProfesor() {
 //-------- Metodos SubMenu Matricula ---------
 //--- Matricular Estudiante ---
 void Menu::matricularEstudiante() {
+    int anio=0;
+    int periodo=0;
+    int codigoCurso=0;
+    int numeroGrupo=0;
+    string idEstudiante="";
 
+    cout << "Ingrese el anio: "; cin >> anio;
+    cout << endl;
+    cout << "Ingresel el numero de periodo: "; cin >> periodo;
+    cout << "Ingrese el codigo del curso: "; cin>>codigoCurso;
+    cout << endl;
+    cout << "Ingrese el numero del grupo: "; cin>>numeroGrupo;
+    cout << endl;
+    cout << "Ingrese el id del estudiante: "; cin >> idEstudiante;
+
+    universidad->matricularEstudiante(anio, periodo, codigoCurso, numeroGrupo, idEstudiante);
+
+    cout << "Estudiante matriculado con exito" << endl;
 }
 
 //--- Desmatricular Estudiante ---
@@ -393,7 +444,7 @@ void Menu::mostrarProfesores(){
 
 //--- Informe  Estudiantes Registrados ---
 void Menu::mostrarEstudiantes() {
-
+    cout << universidad->mostrarEstudiantes() << endl;
 }
 
 void Menu::mostrarGrupos() {

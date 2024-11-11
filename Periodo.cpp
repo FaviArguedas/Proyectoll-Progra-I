@@ -5,23 +5,23 @@ using namespace std;
 #include <sstream>
 
 Periodo::Periodo(){
-    this->nombre = "";
+    this->numero=0;
     this->mesInicio = "";
     this->mesFin = "";
 }
 
-Periodo::Periodo(string nombre_, string mesInicio_, string mesFin_){
-    this->nombre = nombre_;
+Periodo::Periodo(int numero, string mesInicio_, string mesFin_){
+    this->numero=numero;
     this->mesInicio = mesInicio_;
     this->mesFin = mesFin_;
 }
 
-string Periodo::getNombre() {
-    return this->nombre;
+int Periodo::getNumero() {
+    return this->numero;
 }
 
-void Periodo::setNombre(string nombre_) {
-    this->nombre = nombre_;
+void Periodo::setNumero(int numero) {
+    this->numero=numero;
 }
 
 string Periodo::getMesInicio() {
@@ -42,7 +42,7 @@ void Periodo::setMesFin(string MesFin_) {
 
 string Periodo::toString() {
     stringstream s;
-    s << "Nombre: " << nombre << endl;
+    s << "Nombre: " << numero << endl;
     s << "Mes de inicio: " << mesInicio << endl;
     s << "Mes de finalizacion: " << mesFin << endl;
     return s.str();
